@@ -11,15 +11,14 @@ patches:
         path: "/metadata/name"
         value: tom-dev  
 
+      # Note: Important replace / for ~1 in annotation key
       - op: add
-        path: "/metadata/annotations"
-        value: 
-          openshift.io/description: tom-dev  
+        path: "/metadata/annotations/openshift.io~1description"
+        value: tom-dev
 
       - op: add
-        path: "/metadata/annotations"
-        value: 
-          openshift.io/display-name: tom-dev
+        path: "/metadata/annotations/openshift.io~1display-name"
+        value: tom-dev
 
     target:
       kind: Project
