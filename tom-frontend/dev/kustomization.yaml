@@ -1,0 +1,33 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - https://github.com/jaberchez/kustomize-bases/deployment?ref=v1.0.0
+  - https://github.com/jaberchez/kustomize-bases/service?ref=v1.0.0
+  - https://github.com/jaberchez/kustomize-bases/route?ref=v1.0.0
+
+commonLabels:
+  app: tom-frontend
+
+namespace: tom
+
+patches:
+  - target:
+      kind: Deployment
+      name: base-name
+    path: patch-deployment.json
+
+  - target:
+      kind: Service
+      name: base-name
+    path: patch-service.json
+
+  - target:
+      kind: Route
+      name: base-name
+    path: patch-route.json
+
+images:
+  - name: base-image
+    newName: quay.io/jberchez-redhat/tom-frontend
+    newTag: v0.0.0
