@@ -2,5 +2,25 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
+  - https://github.com/jaberchez/kustomize-bases/project?ref=v1.1.1
   - ./tom-frontend
   
+patches:
+  - patch: |-
+      - op: replace
+        path: "/metadata/name"
+        value: tom-dev  
+
+      - op: add
+        path: "/metadata/annotations"
+        value: 
+          openshift.io/description: tom-dev  
+
+      - op: add
+        path: "/metadata/annotations"
+        value: 
+          openshift.io/display-name: tom-dev
+
+    target:
+      kind: Project
+      name: base-project
