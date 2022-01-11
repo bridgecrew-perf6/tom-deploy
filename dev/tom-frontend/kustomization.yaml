@@ -9,7 +9,7 @@ resources:
 commonLabels:
   app: tom-frontend
 
-namespace: tom
+namespace: tom-dev
 
 patches:
   - target:
