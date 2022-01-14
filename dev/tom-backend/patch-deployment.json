@@ -1,0 +1,6 @@
+[
+   {"op": "replace", "path": "/metadata/name", "value": "tom-backend"},
+   {"op": "replace", "path": "/spec/template/spec/containers/0/name", "value": "tom-backend"},
+   {"op": "replace", "path": "/spec/template/spec/containers/0/envFrom/0/secretRef/name", "value": "tom-backend-env-vars"},
+   {"op": "replace", "path": "/spec/template/spec/containers/0/envFrom/1/configMapRef/name", "value": "tom-backend-env-vars"}
+]
