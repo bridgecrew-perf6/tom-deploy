@@ -5,6 +5,8 @@ resources:
   - https://github.com/jaberchez/kustomize-bases/deployment?ref=v1.3.0
   - https://github.com/jaberchez/kustomize-bases/service?ref=v1.3.0
   - https://github.com/jaberchez/kustomize-bases/route?ref=v1.3.0
+  - https://github.com/jaberchez/kustomize-bases/service-account?ref=v1.4.0
+  - rbac.yaml
 
 commonLabels:
   app: tom-frontend
@@ -26,6 +28,11 @@ patches:
       kind: Route
       name: base-name
     path: patch-route.json
+
+  - target:
+      kind: ServiceAccount
+      name: base-name
+    path: patch-service-account.json
 
 images:
   - name: base-image

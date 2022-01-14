@@ -2,5 +2,7 @@
    {"op": "replace", "path": "/metadata/name", "value": "tom-frontend"},
    {"op": "replace", "path": "/spec/template/spec/containers/0/name", "value": "tom-frontend"},
    {"op": "replace", "path": "/spec/template/spec/containers/0/envFrom/0/secretRef/name", "value": "tom-frontend-env-vars"},
-   {"op": "replace", "path": "/spec/template/spec/containers/0/envFrom/1/configMapRef/name", "value": "tom-frontend-env-vars"}
+   {"op": "replace", "path": "/spec/template/spec/containers/0/envFrom/1/configMapRef/name", "value": "tom-frontend-env-vars"},
+   {"op": "replace", "path": "/spec/template/spec/serviceAccountName", "value": "tom-frontend"},
+   {"op": "replace", "path": "/spec/template/spec/automountServiceAccountToken", "value": true}
 ]
