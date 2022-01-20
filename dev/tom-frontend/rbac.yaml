@@ -2,7 +2,6 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: tom-frontend
-  namespace: tom-dev
 rules:
 - apiGroups: [""]
   resources: 
@@ -14,11 +13,9 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: tom-frontend
-  namespace: tom-dev
 subjects:
 - kind: ServiceAccount
   name: tom-frontend
-  namespace: tom-dev
 roleRef:
   kind: Role 
   name: tom-frontend
