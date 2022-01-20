@@ -2,10 +2,10 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - https://github.com/jaberchez/kustomize-bases/deployment?ref=v1.3.0
-  - https://github.com/jaberchez/kustomize-bases/service?ref=v1.3.0
-  - https://github.com/jaberchez/kustomize-bases/route?ref=v1.3.0
-  - https://github.com/jaberchez/kustomize-bases/service-account?ref=v1.4.0
+  - https://github.com/jaberchez/kustomize-bases/deployment?ref=main
+  - https://github.com/jaberchez/kustomize-bases/service?ref=main
+  - https://github.com/jaberchez/kustomize-bases/route?ref=main
+  - https://github.com/jaberchez/kustomize-bases/service-account?ref=main
   - rbac.yaml
 
 commonLabels:
