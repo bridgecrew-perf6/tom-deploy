@@ -2,39 +2,39 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - https://github.com/jaberchez/kustomize-bases/deployment?ref=main
-  - https://github.com/jaberchez/kustomize-bases/service?ref=main
-  - https://github.com/jaberchez/kustomize-bases/route?ref=main
-  - https://github.com/jaberchez/kustomize-bases/service-account?ref=main
-  - rbac.yaml
+- https://github.com/jaberchez/kustomize-bases/deployment?ref=main
+- https://github.com/jaberchez/kustomize-bases/service?ref=main
+- https://github.com/jaberchez/kustomize-bases/route?ref=main
+- https://github.com/jaberchez/kustomize-bases/service-account?ref=main
+- rbac.yaml
 
 commonLabels:
   app: tom-frontend
 
 namespace: tom-dev
 
+
+
+
 patches:
-  - target:
-      kind: Deployment
-      name: base-name
-    path: patch-deployment.json
-
-  - target:
-      kind: Service
-      name: base-name
-    path: patch-service.json
-
-  - target:
-      kind: Route
-      name: base-name
-    path: patch-route.json
-
-  - target:
-      kind: ServiceAccount
-      name: base-name
-    path: patch-service-account.json
+- path: patch-deployment.json
+  target:
+    kind: Deployment
+    name: base-name
+- path: patch-service.json
+  target:
+    kind: Service
+    name: base-name
+- path: patch-route.json
+  target:
+    kind: Route
+    name: base-name
+- path: patch-service-account.json
+  target:
+    kind: ServiceAccount
+    name: base-name
 
 images:
-  - name: base-image
-    newName: quay.io/jberchez-redhat/tom-frontend
-    newTag: v1.0
+- name: base-image
+  newName: quay.io/jberchez-redhat/tom-frontend
+  newTag: 4ba1ebb
